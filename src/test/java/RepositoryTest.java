@@ -28,4 +28,10 @@ public class RepositoryTest {
     public void hasRepositoryType(){
         assertEquals(RepositoryType.PUBLIC, repository.getRepositoryType());
     }
+    @Test
+    public void canAddCommit(){
+        repository.addCommit(commit);
+        assertEquals(1, repository.countCommits());
+
+    }
 }

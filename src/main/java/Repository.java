@@ -26,4 +26,12 @@ public class Repository {
         return this.repositoryType;
     }
 
+    public int countCommits(){
+        return this.commits.size();
+    }
+
+    public void addCommit (Commit commit){
+        this.commits.add(commit);
+    }
+
 }
