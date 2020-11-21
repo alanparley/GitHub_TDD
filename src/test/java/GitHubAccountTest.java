@@ -6,11 +6,13 @@ import static org.junit.Assert.assertEquals;
 public class GitHubAccountTest {
 
     private GitHubAccount gitHubAccount;
+    private GitHubAccount gitHubAccount1;
     private Repository repository;
 
     @Before
     public void before(){
         gitHubAccount = new GitHubAccount("Alan_Parley", "alanparley", AccountType.FREE);
+        gitHubAccount1 = new GitHubAccount("Clive Sinclair", "clivesinclair", AccountType.PRO);
         repository = new Repository("Bucket List Project", "A bucket list app", RepositoryType.PUBLIC);
     }
 
@@ -44,5 +46,10 @@ public class GitHubAccountTest {
     @Test
     public void canUpgradeAccount(){
         assertEquals(AccountType.PRO, gitHubAccount.upgradeAccountType(AccountType.PRO));
+    }
+
+    @Test
+    public void canDowngradeAccount(){
+        assertEquals(AccountType.FREE, gitHubAccount1.downgradeAccountType(AccountType.FREE));
     }
 }

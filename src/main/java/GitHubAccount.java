@@ -43,8 +43,11 @@ public class GitHubAccount {
     }
 
     public AccountType upgradeAccountType(AccountType accountType){
-        this.accountType = AccountType.PRO;
-        return this.accountType = accountType   ;
+        return this.accountType = accountType;
+    }
+
+    public AccountType downgradeAccountType(AccountType accountType){
+        return this.accountType = accountType;
     }
 
 }
