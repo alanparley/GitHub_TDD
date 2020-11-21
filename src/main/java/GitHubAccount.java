@@ -31,5 +31,15 @@ public class GitHubAccount {
     public int countRepositories(){
         return this.repositories.size();
     }
+    public Repository getRepoByName(String name){
+        Repository foundName = null;
+        for (Repository repository: this.repositories){
+            if (repository.getRepositoryName().equals(name)){
+                foundName = repository;
+
+            }
+        }
+        return foundName;
+    }
 
 }

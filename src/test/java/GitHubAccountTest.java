@@ -34,4 +34,10 @@ public class GitHubAccountTest {
         gitHubAccount.addRepository(repository);
         assertEquals(1, gitHubAccount.countRepositories() );
     }
+
+    @Test
+    public void canGetRepoByName(){
+        gitHubAccount.addRepository(repository);
+        assertEquals(repository, gitHubAccount.getRepoByName("Bucket List Project"));
+    }
 }
