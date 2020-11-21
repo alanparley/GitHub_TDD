@@ -34,4 +34,22 @@ public class Repository {
         this.commits.add(commit);
     }
 
+//    public String getCommitByUniqueId(Commit commitToBeFound){
+//        for (Commit commit: this.commits){
+//            if (commit == commitToBeFound);
+//        }
+//        return commitToBeFound.getUniqueId();
+//    }
+
+    public Commit getCommitByUniqueId(String uniqueId){
+        Commit foundId = null;
+        for (Commit commit: this.commits){
+            if (commit.getUniqueId().equals(uniqueId)){
+                foundId = commit;
+
+            }
+        }
+        return foundId;
+    }
+
 }
