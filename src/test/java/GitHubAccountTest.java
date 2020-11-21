@@ -40,4 +40,9 @@ public class GitHubAccountTest {
         gitHubAccount.addRepository(repository);
         assertEquals(repository, gitHubAccount.getRepoByName("Bucket List Project"));
     }
+
+    @Test
+    public void canUpgradeAccount(){
+        assertEquals(AccountType.PRO, gitHubAccount.upgradeAccountType(AccountType.PRO));
+    }
 }

@@ -42,4 +42,9 @@ public class GitHubAccount {
         return foundName;
     }
 
+    public AccountType upgradeAccountType(AccountType accountType){
+        this.accountType = AccountType.PRO;
+        return this.accountType = accountType   ;
+    }
+
 }
