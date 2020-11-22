@@ -34,12 +34,6 @@ public class Repository {
         this.commits.add(commit);
     }
 
-//    public String getCommitByUniqueId(Commit commitToBeFound){
-//        for (Commit commit: this.commits){
-//            if (commit == commitToBeFound);
-//        }
-//        return commitToBeFound.getUniqueId();
-//    }
 
     public Commit getCommitByUniqueId(String uniqueId){
         Commit foundId = null;
@@ -50,6 +44,13 @@ public class Repository {
             }
         }
         return foundId;
+    }
+    public RepositoryType changeToPrivate(RepositoryType repositoryType){
+        return this.repositoryType = repositoryType;
+    }
+
+    public RepositoryType changeToPublic(RepositoryType repositoryType){
+        return this.repositoryType = repositoryType;
     }
 
 }

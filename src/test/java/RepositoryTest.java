@@ -36,17 +36,21 @@ public class RepositoryTest {
         assertEquals(1, repository.countCommits());
 
     }
-//    @Test
-//    public void canGetCommitByUniqueId(){
-//        repository.addCommit(commit1);
-//        repository.addCommit(commit2);
-//        assertEquals("c52cfb035c8354cb93dbc83e317cf302d0bc2e73", repository.getCommitByUniqueId(commit2));
-//    }
 
     @Test
     public void canGetCommitByUniqueId(){
         repository.addCommit(commit1);
         repository.addCommit(commit2);
         assertEquals(commit2, repository.getCommitByUniqueId("c52cfb035c8354cb93dbc83e317cf302d0bc2e73"));
+    }
+
+    @Test
+    public void canChangeToPrivate(){
+        assertEquals(RepositoryType.PRIVATE, repository.changeToPrivate(RepositoryType.PRIVATE));
+    }
+
+    @Test
+    public void canChangeToPublic(){
+        assertEquals(RepositoryType.PUBLIC, repository.changeToPublic(RepositoryType.PUBLIC));
     }
 }
